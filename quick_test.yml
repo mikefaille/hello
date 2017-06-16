@@ -17,4 +17,4 @@ reporting:
   data-source: pass-fail
 
 settings: 
-  artifacts-dir:
+  artifacts-dir: artifacts
