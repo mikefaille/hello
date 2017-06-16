@@ -20,7 +20,7 @@ pipeline {
         stage('Archive output') {
             steps {
 
-               step([$class: 'ArtifactArchiver', artifacts: '**/*.jtl, **/jmeter.log'])
+               step([$class: 'ArtifactArchiver', artifacts: '/tmp/artifacts/*.jtl, /tmp/artifacts/jmeter.log'])
             }
         }
     }
