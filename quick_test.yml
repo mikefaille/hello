@@ -1,0 +1,17 @@
+execution:
+- concurrency: 100
+  ramp-up: 10s
+  hold-for: 30s
+  scenario: quick-test
+
+scenarios:
+  quick-test:
+    requests:
+    - http://blazedemo.com
+
+
+reporting:
+- module: final-stats
+- module: junit-xml
+  filename: junit-report.xml
+  data-source: pass-fail
