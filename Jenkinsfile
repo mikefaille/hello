@@ -1,5 +1,5 @@
 pipeline {
-    agent { docker 'maven:3-alpine' } 
+    agent { docker 'undera/taurus' } 
 
     stages {
         stage('Hello') {
@@ -7,9 +7,13 @@ pipeline {
                 echo 'Hello World'
             }
         }
+        
+
         stage('Example Build') {
             steps {
-                sh 'mvn -B clean verify'
+                
+                sh 'ls'
+              sh 'bzt quick_test.yml'
             }
         }
     }
