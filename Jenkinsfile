@@ -16,6 +16,13 @@ pipeline {
               sh 'bzt quick_test.yml'
             }
         }
+        
+        stage('Archive output') {
+            steps {
+
+               step([$class: 'ArtifactArchiver', artifacts: '**/*.jtl, **/jmeter.log'])
+            }
+        }
     }
     
-}
+
