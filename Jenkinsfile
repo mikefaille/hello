@@ -20,7 +20,7 @@ pipeline {
         stage('Archive output') {
             steps {
 
-               step([$class: 'ArtifactArchiver', artifacts: '*.xml'])
+               step([$class: 'ArtifactArchiver', artifacts: 'artifacts/*.xml'])
             }
         }
     }
