@@ -28,7 +28,7 @@ pipeline {
          */
 
         performanceReport compareBuildPrevious: true,
-                sourceDataFiles  'artifacts/*.jtl, artifacts/*.jtl',
+      sourceDataFiles:  'artifacts/*.jtl, artifacts/*.jtl',
       configType: 'ART',
       errorFailedThreshold: 100,
       errorUnstableResponseTimeThreshold: '',
@@ -45,7 +45,7 @@ pipeline {
 
     stage("Archive log files") {
       steps{
-        archiveArtifacts '**/*.jtl **/*.log'
+        archiveArtifacts '**/*.jtl, **/*.log'
       }
     }
 
